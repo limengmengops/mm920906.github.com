@@ -12,9 +12,13 @@ body {
 a {
   color: #1e6bb8;
   text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
-
+a:hover {
+text-decoration: underline; }
+.fl{
+	float:left;}
+.fr{
+	float:right;}
+.clear:fixed{content:''; display:block; clear:both;}
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
