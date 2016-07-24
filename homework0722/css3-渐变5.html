@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{width:200px; height:200px; margin:100px auto;
+		background:-webkit-linear-gradient(0deg,pink,green, aqua, #ccc);
+		background:-moz-linear-gradient(0deg,pink,green, aqua, #ccc);
+		background:-ms-linear-gradient(0deg,pink,green, aqua, #ccc);
+		background:-o-linear-gradient(0deg,pink,green, aqua, #ccc);
+		background:linear-gradient(0deg,pink,green, aqua, #ccc);
+		-webkit-transition:1s all ease;
+		-moz-transition:1s all ease;
+		-ms-transition:1s all ease;
+		-o-transition:1s all ease;
+		transition:1s all ease;
+	}
+</style>
+<script>
+	window.onload=function(){
+		var oDiv=document.querySelector('div');	
+		oDiv.onclick=function(){
+			var d=0;
+			setInterval(function(){
+				oDiv.style.background='-webkit-linear-gradient('+(d+=100)+'deg,pink,green, aqua, #ccc)';
+				oDiv.style.background='-moz-linear-gradient('+(d+=100)+'deg,pink,green, aqua, #ccc)';
+				oDiv.style.background='-ms-linear-gradient('+(d+=100)+'deg,pink,green, aqua, #ccc)';
+				oDiv.style.background='-o-linear-gradient('+(d+=100)+'deg,pink,green, aqua, #ccc)';
+				oDiv.style.background='linear-gradient('+(d+=100)+'deg,pink,green, aqua, #ccc)';	
+			},30);	
+		};
+	};
+</script>
+</head>
+
+<body>
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.box{width:50px; height:300px;  border:1px solid #000; position:relative;margin:100px auto; overflow:hidden;}
+	div{width:500px; height:300px;  position:absolute; left:0px; top:0px;
+	background:-moz-repeating-linear-gradient(-45deg,blue 0, blue 10px, #fff 10px, #fff 20px, red 20px,red 30px,#fff 30px,#fff 40px);
+	background:-webkit-repeating-linear-gradient(-45deg,blue 0, blue 10px, #fff 10px, #fff 20px, red 20px,red 30px,#fff 30px,#fff 40px);
+	background:-ms-repeating-linear-gradient(-45deg,blue 0, blue 10px, #fff 10px, #fff 20px, red 20px,red 30px,#fff 30px,#fff 40px);
+	background:-o-repeating-linear-gradient(-45deg,blue 0, blue 10px, #fff 10px, #fff 20px, red 20px,red 30px,#fff 30px,#fff 40px);
+	background:repeating-linear-gradient(-45deg,blue 0, blue 10px, #fff 10px, #fff 20px, red 20px,red 30px,#fff 30px,#fff 40px);
+	}
+</style>
+<script>
+window.onload=function(){
+	var oCon=document.querySelector('.con');
+	var d=0;
+	setInterval(function(){
+		d-=10;
+		oCon.style.left=d%450+'px';	
+	},100);
+};
+</script>
+</head>
+<body>
+	<div class="box">
+		<div class="con"></div>
+    </div>
+</body>
+</html>

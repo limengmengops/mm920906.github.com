@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{width:100px; height:100px; background:aqua; position:absolute; left:0; top:0;}
+</style>
+<script>
+	window.onload=function(){
+		var oDiv=document.querySelector('div');	
+		oDiv.onclick=function(){
+			oDiv.style.WebkitTransition='0.3s all ease';
+			oDiv.style.MozTransition='0.3s all ease';
+			oDiv.style.msTransition='0.3s all ease';
+			oDiv.style.OTransition='0.3s all ease';
+			oDiv.style.transition='0.3s all ease';
+			oDiv.style.left='300px';
+		};
+	};
+</script>
+</head>
+
+<body>
+	<div></div>
+</body>
+</html>
