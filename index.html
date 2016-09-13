@@ -72,8 +72,8 @@ footer a:hover span{color:#4CF88B;}
 </head>
 <body>
 	<!--首页-->
-	<section class="head">
-    	<div class="hd_bg">
+	<section class="head" id="head">
+    	<div class="hd_bg" id="hd_bg">
         	<div class="pinfo">
             	<p class="name">李梦梦</p>
                 <p class="job">前端开发工程师</p>
@@ -269,6 +269,11 @@ footer a:hover span{color:#4CF88B;}
 <script src="js/nav.js"></script>
 <script>
 window.onload=function(){
+
+	var head=document.getElementById('hd_bg');	
+	var CH=document.documentElement.clientHeight;
+	head.style.height=CH-60+'px';
+	
 	//穿墙
 	/*
 	var oUl=document.querySelector('.portfolioContainer ul');
