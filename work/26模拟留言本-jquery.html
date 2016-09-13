@@ -1,0 +1,67 @@
+<!--
+智能社© - http://www.zhinengshe.com/
+
+微博：@北京智能社
+微信：zhi_neng_she
+
+最具深度的前端开发培训机构 HTML+CSS/JS/HTML5
+-->
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>模拟留言板 - 智能社 - www.zhinengshe.com</title>
+<style type="text/css">
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+body { background: #f9f9f9; font-size: 14px; }
+
+#box { width: 450px; padding: 10px; border: 1px solid #ccc; background: #f4f4f4; margin: 10px auto; }
+#fill_in { margin-bottom: 10px; }
+#fill_in li { padding: 5px 0; }
+#fill_in .text { width: 380px; height: 30px; padding: 0 10px; border: 1px solid #ccc; line-height: 30px; font-size: 14px; font-family: arial; }
+#fill_in textarea { width: 380px; height: 100px; line-height: 20px; padding: 5px 10px; border: 1px solid #ccc; font-size: 14px; font-family: arial; overflow: auto; vertical-align: top; }
+#fill_in .btn { border: none; width: 100px; height: 30px; border: 1px solid #ccc; background: #fff; color: #666; font-size: 14px; position: relative; left: 42px; }
+
+#message_text { display: none; }
+#message_text h2 { font-size: 14px; padding: 6px 0 4px 10px; background: #ddd; border-bottom: 1px solid #ccc; }
+#message_text li { background: #f9f9f9; border-bottom: 1px solid #ccc; color: #666; overflow: hidden; }
+#message_text h3 { padding: 10px; font-size: 14px; line-height: 24px; }
+#message_text p { padding: 0 10px 10px; text-indent: 28px; line-height: 20px; }
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('#btn').click(function(){
+			if($('#text').val()==''||$('#content').val()==''){
+				alert('姓名和内容都不能为空哦');
+				return;
+			}	
+			var oLi=document.createElement('li');
+			$(oLi).html('<h3>'+$('#text').val()+'</h3><p>'+$('#content').val()+'</p>');
+			$(oLi).appendTo($('#message_text ul'));
+			$('#message_text').css('display','block');
+			$('#text').val('');
+			$('#content').val('');
+		});	
+	});
+</script>
+</head>
+<body>
+<div id="box">
+    <ul id="fill_in">
+        <form>
+            <li>姓名：<input id="text" type="text" class="text" /></li>
+            <li>内容：<textarea id="content"></textarea></li>
+            <li><input id="btn" type="button" value="提交" class="btn" /></li>
+        </form>
+    </ul>
+    <div id="message_text">
+        <h2>显示留言</h2>
+        <ul></ul>
+    </div>
+</div>
+</body>
+</html>

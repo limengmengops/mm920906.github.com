@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+li{list-style:none;}
+a{text-decoration:none; color:#333;}
+img{vertical-align:top; border:none;}
+input{border:none; outline:none;}
+i,em,b,strong{font-style:normal;}
+
+/*重用样式*/
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after{content:''; display:none; clear:both;}
+body{font:12px 'microsoft Yahei'; color:#b0b0b0;}
+.w{width:1226px; margin:0 auto;}
+.block{display:block;}
+.marb_14{margin-bottom:14px;}
+.marr_14{margin-right:14px;}
+

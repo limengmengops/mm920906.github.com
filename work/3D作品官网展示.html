@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{margin:0; padding:0; list-style:none;}
+	img{width:600px ;height:400px;}
+	ul{width:600px; height:400px; margin:100px auto; position:relative;}
+	ul li{width:600px;height:400px; position:absolute; left:0; top:0; border:1px solid #000; -webkit-transform:perspective(800px) rotateY(0deg) translate(0,0); -webkit-transition:1s all ease;}
+	ul .l2{opacity:0; -webkit-transform:perspective(800px) translateX(-350px) rotateY(45deg);z-index:1;}
+	ul .l1{opacity:0.7; -webkit-transform:perspective(800px) translateX(-300px) rotateY(45deg);z-index:3;}
+	ul .cur{opacity:1; z-index:5; }
+	ul .r1{opacity:0.7; -webkit-transform:perspective(800px) translateX(300px) rotateY(-45deg);z-index:3;}
+	ul .r2{opacity:0; -webkit-transform:perspective(800px) translateX(350px) rotateY(-45deg);z-index:1;}
+</style>
+<script>
+window.onload=function(){
+	var oPrev=document.querySelector('.prev');	
+	var oNext=document.querySelector('.next');
+	var oUl=document.querySelector('ul');
+	var aLi=oUl.children;
+	var arr=[];
+	var bok=false;
+	for(var i=0;i<aLi.length;i++){
+		arr.push(aLi[i].className);	
+	}	
+	oNext.onclick=function(){
+		if(bok){return}
+		bok=true;
+		arr.unshift(arr.pop());
+		tab();
+	};
+	oPrev.onclick=function(){
+		if(bok){return}
+		bok=true;
+		arr.push(arr.shift());
+		tab();
+	};
+	function tab(){
+		for(var i=0;i<arr.length;i++){
+			aLi[i].className=arr[i];	
+		}	
+		var oCur=document.querySelector('.cur');
+		function tranEnd(){
+			oCur.removeEventListener('transitionend',tranEnd,false);
+			bok=false;	
+		}
+		oCur.addEventListener('transitionend',tranEnd,false);
+	}
+};	
+</script>
+</head>
+<body>
+	<a href="javascript:;" class="prev">上一个</a>
+	<a href="javascript:;" class="next">下一个</a>
+	<ul>
+		<li class="l2"><img src="img/2.jpg"/></li>
+		<li class="l1"><img src="img/1.jpg"/></li>
+		<li class="cur"><img src="img/3.jpg"/></li>
+		<li class="r1"><img src="img/11.jpg"/></li>
+		<li class="r2"><img src="img/22.jpg"/></li>
+		<li><img src="img/31.jpg"/></li>
+		<li><img src="img/32.jpg"/></li>
+		<li><img src="img/33.jpg"/></li>
+		<li><img src="img/34.jpg"/></li>
+		<li><img src="img/66.jpg"/></li>
+		<li><img src="img/55.jpg"/></li>  
+    </ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{margin:0; padding:0; }
+	.box{width:300px; height:300px; border:5px solid #000; position:absolute; left:50%; top:50%; margin-top:-150px; margin-left:-150px; border-radius:50%;}
+	.hour{width:12px; height:80px; background:#000; border-radius:50% 50% 0 0; position:absolute; left:50%; margin-left:-6px; top:70px; -webkit-transform-origin:bottom;}
+	.min{width:10px; height:100px; background: #47E16B; border-radius:50% 50% 0 0; position:absolute; left:50%; margin-left:-5px; top:50px; -webkit-transform-origin:bottom;}
+	.sec{width:8px; height:120px; background: #E81F22; border-radius:50% 50% 0 0; position:absolute; left:50%; margin-left:-4px; top:30px; -webkit-transform-origin:bottom;}
+	span{width:3px; height:5px; background:#000; position:absolute; left:50%; margin-left:-3px; top:0; -webkit-transform:rotate(0deg); -webkit-transform-origin:center 150px;}
+	.big{height:10px; font-weight:bold;}
+	em{font-style:normal; position:absolute; left:50%; margin-left:-15px; top:10px; width:30px; text-align:center; -webkit-transform:rotate(0deg); border-radius:50%;}
+	.dian{width:20px; height:20px; border-radius:50%; background:-webkit-radial-gradient(#fff,#000 ); position:absolute; left:50%; top:50%; margin-left:-10px; margin-top:-10px;}
+</style>
+<script>
+window.onload=function(){
+	var oClock=document.querySelector('.box');
+	var oHou=document.querySelector('.hour');
+	var oMin=document.querySelector('.min');
+	var oSec=document.querySelector('.sec');
+	setInterval(time,1000);
+	function time(){
+		var oDate=new Date();
+		var hou=oDate.getHours();
+		var mins=oDate.getMinutes();
+		var sec=oDate.getSeconds();
+		 
+		oHou.style.WebkitTransform='rotate('+(30*hou+mins/60*30)+'deg)';
+		oMin.style.WebkitTransform='rotate('+(6*mins+sec/60*6)+'deg)';
+		oSec.style.WebkitTransform='rotate('+6*sec+'deg)';
+	}
+	time();
+	//添加刻度
+	var n=60;
+	for(var i=0;i<n;i++){
+		var oS=document.createElement('span');
+		oS.style.WebkitTransform='rotate('+i*6+'deg)';
+		if(i%5==0){
+			oS.className='big';	
+			oS.innerHTML='<em>'+(i/5||12)+'<\/em>';
+			var em=oS.children[0];
+			em.style.WebkitTransform='rotate('+(-i*6)+'deg)';
+		}
+		oClock.appendChild(oS);	
+	}
+};
+</script>
+</head>
+<body>
+	<div class="box">
+    	<div class="hour"></div>
+    	<div class="min"></div>
+    	<div class="sec"></div>
+        <div class="dian"></div>
+    </div>
+</body>
+</html>

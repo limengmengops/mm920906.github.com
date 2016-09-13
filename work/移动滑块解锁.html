@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0; padding:0;}
+body{background:black;}
+@keyframes test{
+	from{background-position:0px  0px;}
+	to{background-position:300px 0px;}
+}
+div{width:400px; margin:100px auto; height:80px; border:1px solid #ccc; position:relative;}
+div span{width:100%; height:100%; text-align:center; line-height:80px; position:absolute; left:0; top:0; color:#fff; font-size:30px; font-family:微软雅黑; font-weight:bold;}
+div .s2{background:-webkit-linear-gradient(-45deg, rgba(255,255,255,0) 30px,#000 40px,rgba(255,255,255,0) 60px);background-position:120px 0px;-webkit-animation:test 1s linear infinite ;-webkit-background-clip:text; color:rgba(0,0,0,0);}
+
+</style>
+</head>
+
+<body>
+	<div>
+    	<span>移动滑块解锁</span>
+        <span class="s2">移动滑块解锁</span>
+    </div>
+</body>
+</html>

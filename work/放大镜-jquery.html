@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{margin:0; padding:0;}
+	#div1,#div2{width:300px; height:300px; margin:10px; float:left; position:relative;}
+	#div1{overflow:hidden;}
+	#div1 span{width:100px; height:100px; background:aqua; position:absolute; left:0; top:0; display:none; opacity:0.5;}
+	#div2{display:none; overflow:hidden;}
+	#pic{position:absolute; left:0; top:0;}
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		$('#div1').mouseover(function(){
+			$('#mask').css('display','block');
+			$('#div2').css('display','block');
+		});
+		$('#div1').mouseout(function(){
+			$('#mask').css('display','none');
+			$('#div2').css('display','none');
+		});
+		
+		$('#div1').mousemove(function(ev){
+			var l=ev.clientX-$('#div1').offset().left-parseInt($('#mask').outerWidth()/2);
+			var t=ev.clientY-$('#div1').offset().top-parseInt($('#mask').outerHeight()/2);
+			//alert($('#mask').outerWidth()/2);
+			if(l<0){
+				l=0;	
+			}else if(l>$('#div1').outerWidth()-$('#mask').outerWidth()){
+				l=$('#div1').outerWidth()-$('#mask').outerWidth();
+			}
+			if(t<0){
+				t=0;	
+			}else if(t>$('#div1').outerHeight()-$('#mask').outerHeight()){
+				t=$('#div1').outerHeight()-$('#mask').outerHeight();
+			}
+			$('#mask').css('left',l+'px');
+			$('#mask').css('top',t+'px');
+			$('#pic').css('left',-l*($('#pic').width()-$('#div2').width())/($('#div1').outerWidth()-$('#mask').outerWidth())+'px');
+			$('#pic').css('top',-t*($('#pic').height()-$('#div2').height())/($('#div1').outerHeight()-$('#mask').outerHeight())+'px');
+		});
+			
+			$('#mask').setCapture&&$('#mask').setCapture();
+			return false;
+	});
+</script>
+</head>
+
+<body>
+	<div id="div1">
+    	<img src="img/m1.jpg">
+        <span id="mask"></span>
+    </div>
+    <div id="div2">
+    	<img src="img/b1.jpg" id="pic">
+    </div>
+</body>
+</html>

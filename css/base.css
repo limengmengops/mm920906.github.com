@@ -1,0 +1,12 @@
+/*清除默认样式*/
+*{margin:0; padding:0; }
+li{list-style:none;}
+a{text-decoration:none; color:#fff;}
+img{vertical-align:top; border:none;}
+
+/*重用样式*/
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after{content:''; display:block; clear:both;}
+body{font:16px 微软雅黑; color:#fff;}
+.w{width:1170px; margin:0 auto;}

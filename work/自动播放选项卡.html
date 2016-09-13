@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{width:700px;  margin:20px auto; position:relative;}
+	img{width:700px; height:500px; display:none;}
+	.show{display:block;}
+	.cur{background:pink;}
+	input{width:100px; height:50px;}
+	span{font-size:50px; color:#000; position:absolute; top:50%; cursor:pointer;}
+	#prev{left:10px;}
+	#next{right:10px;}
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		var iNow=0;
+		var timer=null;
+		function tab(){
+			$('#box input').each(function(){
+				$(this).removeClass('cur');
+				$('#box img').removeClass('show');	
+			});	
+			$('#box input').eq(iNow).addClass('cur');
+			$('#box img').eq(iNow).addClass('show');	
+		};
+		$('#box input').each(function(){
+			$(this).mouseover(function(){
+				iNow=$(this).index();
+				tab();
+			});
+		});	
+		$('#next').click(function(){
+			iNow++;
+			if(iNow==$('#box input').length){
+				iNow=0;	
+			}	
+			tab();
+		});
+		$('#prev').click(function(){
+			iNow--;
+			if(iNow==-1){
+				iNow=$('#box input').length-1;
+			}	
+			tab();
+		});
+		function next(){
+			iNow++;	
+			if(iNow==$('#box input').length){
+				iNow=0;	
+			}	
+			tab();
+		}
+		clearInterval(timer);
+		timer=setInterval(next,1000);
+		$('#box').mouseover(function(){
+			clearInterval(timer);	
+		});
+		$('#box').mouseout(function(){
+			clearInterval(timer);	
+			timer=setInterval(next,1000);
+		});
+	});
+	/*window.onload=function(){
+		var oBox=document.getElementById('box');
+		var aBtn=oBox.getElementsByTagName('input');
+		var aImg=oBox.getElementsByTagName('img');
+		var oPrev=document.getElementById('prev');
+		var oNext=document.getElementById('next');
+		var iNow=0;
+		var timer=null; 
+		function tab(){
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].className='';
+				aImg[i].className='';
+			}
+			aBtn[iNow].className='cur';
+			aImg[iNow].className='show';
+		}
+		function next(){
+			iNow++;
+			if(iNow==aBtn.length){
+				iNow=0;
+			}
+			tab();
+		}
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].index=i;
+			aBtn[i].onmouseover=function(){
+				iNow=this.index;
+				tab();
+			};
+		}	
+		oNext.onclick=function(){
+			iNow++;
+			if(iNow==aBtn.length){
+				iNow=0;
+			}
+			tab();
+		};
+		oPrev.onclick=function(){
+			iNow--;
+			if(iNow==-1){
+				iNow=aBtn.length-1;
+			}
+			tab();
+		};
+		clearInterval(timer);
+		timer=setInterval(next,2000);
+		oBox.onmouseover=function(){
+			clearTimer(timer);	
+		};
+		
+	};*/
+</script>
+</head>
+
+<body>
+	<div id="box">
+    	<input type="button" value="喵" class="cur">
+    	<input type="button" value="喵喵">
+    	<input type="button" value="喵喵喵">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+        <br />
+        <br />
+        <img src="img2/1 (19).jpg" class="show"/>
+        <img src="img2/1 (14).jpg"/>
+        <img src="img2/1 (17).jpg"/>
+    </div>
+</body>
+</html>

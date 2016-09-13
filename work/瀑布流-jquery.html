@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{ border:1px solid red;}
+*{margin:0;padding:0;}
+#box{width:966px; margin:0 auto;}
+ul{ list-style:none; width:300px;margin:0 10px; float:left; border:1px solid red;}
+ul li{ width:100%; margin:10px 0px; height:150px; background:#ccc;}
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script>
+	$(function(){
+		function rnd(m,n){
+			return parseInt(m+Math.random()*(n-m));	
+		}
+		function createLi(){
+			var oLi=document.createElement('li');
+			oLi.style.height=rnd(150,300)+'px';	
+			oLi.style.background='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+			return oLi;
+		}
+		//生成20个li
+		for(var i=0;i<20;i++){
+			var oLi=createLi();
+			var arr=[];
+			$('ul').each(function(){
+				arr.push(this);	
+			});
+			arr.sort(function(ul1,ul2){
+				return ul1.offsetHeight-ul2.offsetHeight;
+			});
+			$(oLi).appendTo(arr[0]);
+		}	
+		
+		$(document).scroll(function(){
+			var sT=document.documentElement.scrollTop||document.body.scrollTop;
+			var cT=document.documentElement.clientHeight;
+			var scrollBottom=sT+cT;
+			if(document.body.scrollHeight<=scrollBottom){
+				alert('到底了');
+			}
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<div id="box">
+    	<ul>
+        </ul>
+    	<ul>
+        </ul>
+    	<ul>
+        </ul>
+    </div>
+</body>
+</html>

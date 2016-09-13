@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">			
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>无标题文档</title>
+<style>
+*{margin:0; padding:0; list-style:none; text-decoration:none;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after{content:''; display:block; clear:both;}
+em{font-style:normal;}
+html,body{font-size:20px; font-family:微软雅黑; }
+.wrap{width:16rem;}
+.wrap header{width:16rem; height:2.552rem; background:-webkit-linear-gradient(#fff,#ebebeb);text-align:center; position:relative;}
+.wrap .back{ width:3.25rem; height:1.6rem; position:absolute; left:0.5rem; top:0.5rem; background:url(img/jhs/back.png) no-repeat; background-size:100%; text-indent:-9999rem;}
+.wrap .logo{width:9.4rem; height:2.2rem; margin-top:0.175rem;}
+/*banner*/
+.banner{ width:16rem; height:7.45rem; overflow:hidden; position:relative; margin-bottom:0.5rem;}
+.banner ul{width:80rem; height:6.675rem; position:absolute; left:0; top:0;}
+.banner ul li{width:16rem; height:6.675rem; float:left;}
+.banner ol{ position:absolute; bottom:0; width:2.5rem; left:50%; margin-left:-1.25rem;}
+.banner ol li{float:left; width:0.25rem; height:0.25rem; margin:0 0.125rem; background:#a9a9a9; border-radius:50%; text-indent:-999rem; }
+.banner ul li img{width:100%;}
+.banner ol li:active{background:#ff4300;}
+/*menu*/
+.menu {overflow:hidden; width:15.2rem; margin:0 auto; }
+.menu li{width:25%; height:4rem; float:left;  text-align:center; }
+.menu li div {width:2rem; height:2rem; background:#18a78c; border-radius:50%; margin-top:0.5rem;  margin:0 auto; }
+.menu li p{line-height:1.5rem; font-size:0.6rem; color:#999;}
+.menu li:nth-child(1) div{background:#da3809 url(img/jhs/goods.png) no-repeat center; background-size:100%;}
+.menu li:nth-child(2) div{background:#18a78c url(img/jhs/life.png) no-repeat center;background-size:100%;}
+.menu li:nth-child(3) div{background:#000000 url(img/jhs/king.png) no-repeat center;background-size:100%;}
+.menu li:nth-child(4) div{background:#ff529d url(img/jhs/jubaopen.png) no-repeat center;background-size:100%;}
+.menu li:nth-child(5) div{background:#cfa871 url(img/jhs/diamond.png) no-repeat center;background-size:100%;}
+.menu li:nth-child(6) div{background:#ffb021 url(img/jhs/jujiazhuang.png) no-repeat center;background-size:100%;}
+.menu li:nth-child(7) div{background:#a1c36f url(img/jhs/jutou.png) no-repeat center;background-size:100%;}
+.menu li:nth-child(8) div{background:#f5493c url(img/jhs/phone.png) no-repeat center;background-size:100%;}
+/*热卖榜*/
+.rank{width:15rem; margin:0 auto;}
+.rank .hd{line-height:1.8rem;height:1.8rem;  font-size:0.7rem; position:relative; font-size:0.7rem; padding-left:0.55rem; border-bottom:0.1rem solid #dcdcdc;}
+.rank .hd a{ color:#333;}
+.rank .hd .line{width:0.1rem; height:0.75rem; background:#d51938; position:absolute; left:0; top:0.525rem;}
+.rank .hd h2{float:left; font-weight:normal; font-size:0.7rem;}
+.rank .hd .right{float:right;}
+.rank ul li{width:15rem; height:3rem; margin-top:0.5rem;  position:relative;}
+.rank li .num{display:block; width:1.5rem; height:3rem; background:#e00202; text-align:center; line-height:3rem; font-size:1.2rem; color:#fff;} 
+.rank .sec .num{bakground:#ff4800;}
+.rank .third .num{background:#ff7300;}
+.rank .forth .num{background:#ff9d00;}
+.rank .fifth .num{background:#ffa800;}
+.rank .six .num{background:#ffb400;}
+.rank .sev .num{background:#ffba00;}
+.rank .eight .num{background:#fcd000;}
+.rank .nine .num{background:#ffd719;}
+.rank .ten .num{background:#ffe152;}
+.rank .ten{ margin-bottom:0.5rem;}
+.rank li img{width:4.5rem; height:3rem; overflow:hidden; }
+.rank li .info{width:8.8rem; height:3rem; background:#f4f4f4; padding-right:0.2rem;}
+.rank .info .left{font-size:0.6rem; color:#999; line-height:0.9rem; margin-left:0.55rem; margin-top:0.6rem;}
+.rank .info .left em{text-decoration:line-through;}
+.rank .info .price{font-size:0.8rem; color:#d51938;  line-height:2.75rem; margin-right:1.25rem;}
+.rank li .arrow{width:1rem; height:1rem; position:absolute; right:0; top:50%; margin-top:-0.5rem; background:url(img/jhs/arrow.png) no-repeat;background-size:100%; }
+.goods{width:15rem; margin:0 auto; }
+.more{display:block; width:15rem; height:2rem; background:#f5f5f5; text-align:center; line-height:2rem; font-size:0.7rem; color:#666; margin-bottom:0.5rem; position:relative; }
+.more .arrow{ width:1rem; height:1rem; background:#f5f5f5 url(img/jhs/arrow.png) no-repeat right; position:absolute; right:0; top:50%; margin-top:-0.5rem;background-size:100%;  }
+.goods .aside{width:3.75rem; height:8.6rem; background:#da3809 url(img/jhs/goods.png) no-repeat -5rem 2rem; background-size:300%; text-align:center; font-size:0.7rem;  line-height:2rem; color:#fff; margin-bottom:0.5rem;}
+.life .goods .aside{background:#18a78c url(img/jhs/life.png) no-repeat -2.8rem 3.2rem; background-size:200%;}
+.sign .goods .aside{background:#838383 url(img/jhs/king.png) no-repeat -2.8rem 3.2rem; background-size:200%;}
+.goods .type{width:11.225rem; height:8.775rem; border-top:1px solid #eee; border-left:1px solid #eee;box-sizing:border-box; }
+.goods .type a{display:block; float:left; width:3.725rem; height:2.15rem; border-right:1px solid #eee; border-bottom:1px solid #eee; text-align:center; line-height:2.15rem; box-sizing:border-box; font-size:0.7rem; color:#666;}
+.goods .type .hot{color:#d51942;}
+.mobile{width:15rem; height:4rem; display:-webkit-box; margin:0 auto;}
+.mobile a{display:block; -webkit-box-flex:1; border:1px solid #dcdcdc; text-align:center;  height:1.2rem; padding-top:2.8rem; font-size:0.6rem; color:#999; position:relative;}
+.mobile .icon{width:1.25rem; height:1.25rem; position:absolute; left:50%; margin-left:-0.625rem; top:0.75rem; background:url(img/jhs/apple.png) no-repeat;background-size:100%;}
+.mobile .android .icon{background-image:url(img/jhs/android.png);}
+.mobile .adv .icon{background-image:url(img/jhs/msg.png);}
+.log_reg{width:14.5rem; height:2.2rem; background:#f8f8f8; margin-top:0.7rem; line-height:2.2rem; padding:0 0.75rem;  font-size:0.7rem;}
+.log_reg a{color:#333;}
+.login{margin-right:1.2rem; }
+.top{position:relative; padding-right:1rem;}
+.top .trang{width:0.425rem; height:0.225rem; background:url(img/jhs/trang.png) no-repeat right; position:absolute; right:0 ; top:50%; margin-top:-0.1125rem;  background-size:100%;}
+footer{width:16rem; height:8.575rem; background:#eee; text-align:center; font-size:0.7rem;color:#999; font-size:0.55rem;}
+footer .version{line-height:2.25rem; }
+footer a {color:#333; }
+footer .serv{margin-bottom:0.7rem; height:0.55rem;}
+footer img{width:13rem; height:4rem;}
+</style>
+<script>
+;(function(win,doc){
+	function change(){
+		doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+	}
+	change();
+	win.addEventListener('resize',change,false);	
+})(window,document);
+</script>
+</head>
+
+<body>
+	<section class="wrap">
+    	<header>
+        	<a href="javascript:;" class="back">返回</a>
+            <img src="img/jhs/logo.png" class="logo"/>
+        </header>
+        <!--banner-->
+        <section class="banner">
+            <ul>
+                <li><img src="img/jhs/banner.png"/></li>
+                <li><img src="img/jhs/banner.png"/></li>
+                <li><img src="img/jhs/banner.png"/></li>
+                <li><img src="img/jhs/banner.png"/></li>
+                <li><img src="img/jhs/banner.png"/></li>
+            </ul>
+            <ol>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ol>
+        </section>
+        <ul class="menu">
+            <li>
+            	<div></div>
+                <p>商品</p>
+            </li>
+            <li>
+            	<div></div>
+                <p>生活</p>
+            </li>
+            <li>
+            	<div></div>
+                <p>品牌</p>
+            </li>
+            <li>
+            	<div></div>
+                <p>聚宝盆</p>
+            </li>
+            <li>
+            	<div></div>
+                <p>聚名品</p>
+            </li>
+            <li>
+            	<div></div>
+                <p>聚家装</p>
+            </li>
+            <li>
+            	<div></div>
+                <p>聚透</p>
+            </li>
+            <li>
+            	<div></div>
+                <p>客户端</p>
+            </li>
+        </ul>
+        <!--聚划算热卖榜-->
+        <section class="rank">
+        	<div class="hd">
+            	<span class="line"></span>
+            	<h2><a href="#">聚划算热卖榜</a></h2>
+                <span class="right">TOP10</span>
+            </div>
+            <ul class="list">
+            	<li>
+                	<div class="fl clearfix">
+                        <span class="num fl">1</span>
+                        <img src="img/jhs/1.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.3折</span>
+                                <span>￥<em>299</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥51</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="sec">
+                	<div class="fl clearfix">
+                        <span class="num fl">2</span>
+                        <img src="img/jhs/2.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.3折</span>
+                                <span>￥<em>299</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥51</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="third">
+                	<div class="fl clearfix">
+                        <span class="num fl">3</span>
+                        <img src="img/jhs/3.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.3折</span>
+                                <span>￥<em>299</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥289</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="forth">
+                	<div class="fl clearfix">
+                        <span class="num fl">4</span>
+                        <img src="img/jhs/4.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>3.0折</span>
+                                <span>￥<em>288</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥88</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="fifth">
+                	<div class="fl clearfix">
+                        <span class="num fl">5</span>
+                        <img src="img/jhs/6.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.3折</span>
+                                <span>￥<em>299</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥199</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="six">
+                	<div class="fl clearfix">
+                        <span class="num fl">6</span>
+                        <img src="img/jhs/7.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>1.7折</span>
+                                <span>￥<em>3299</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥588</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="sev">
+                	<div class="fl clearfix">
+                        <span class="num fl">7</span>
+                        <img src="img/jhs/8.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.3折</span>
+                                <span>￥<em>7665</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥4599</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="eight">
+                	<div class="fl clearfix">
+                        <span class="num fl">8</span>
+                        <img src="img/jhs/9.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.9折</span>
+                                <span>￥<em>439</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥129</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="nine">
+                	<div class="fl clearfix">
+                        <span class="num fl">9</span>
+                        <img src="img/jhs/10.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.3折</span>
+                                <span>￥<em>299</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥9</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            	<li class="ten">
+                	<div class="fl clearfix">
+                        <span class="num fl">10</span>
+                        <img src="img/jhs/11.png" class="fl"/>
+                    </div>
+                    <div class="info fl clearfix">
+                    	<div class="left fl">
+                        	<p>已售68423</p>
+                            <p>
+                            	<span>2.3折</span>
+                                <span>￥<em>299</em></span>
+                            </p>
+                        </div>
+                        <div class="price fr">￥51</div>
+                    </div>
+                    <div class="arrow"></div>
+                </li>
+            </ul>
+        	<a href="#" class="more">
+            	<span>更多划算，逛起来！</span>
+                <span class="arrow"></span>
+            </a>
+        </section>
+        <!--商品团-->
+        <div class="goods">
+            <div class="detail clearfix">
+            	<div class="fl aside">商品团</div>
+                <div class="fl type clearfix" >
+                    <a href="#" class="hot">服饰</a>
+                    <a href="#">配饰</a>
+                    <a href="#">美妆</a>
+                    <a href="#">鞋包</a>
+                    <a href="#">食品</a>
+                    <a href="#" class="hot">家居</a>
+                    <a href="#">运动</a>
+                    <a href="#" class="hot">电器</a>
+                    <a href="#">百货</a>
+                    <a href="#">母婴</a>
+                    <a href="#">数码</a>
+                    <a href="#">更多</a>
+                </div>
+            </div>
+        	<a href="#" class="more">
+            	<span>精彩商品，逛来起！</span>
+                <span class="arrow"></span>
+            </a>
+        </div>
+        <!--生活团-->
+		<div class="life">
+        	<div class="goods">
+                <div class="detail clearfix">
+                    <div class="fl aside">生活团</div>
+                    <div class="fl type clearfix" >
+                            <a href="#" class="hot">美食</a>
+                            <a href="#">教育</a>
+                            <a href="#">酒店</a>
+                            <a href="#">电影</a>
+                            <a href="#">生活服务</a>
+                            <a href="#" class="hot">卡券</a>
+                            <a href="#">摄影</a>
+                            <a href="#" class="hot">粮油生鲜</a>
+                            <a href="#" >门票</a>
+                            <a href="#">休闲娱乐</a>
+                        </div>
+            	</div>
+        		<a href="#" class="more">
+                	<span>品质生活，逛起来！</span>
+                    <span class="arrow"></span>
+                </a>
+            </div>
+        </div>
+        <!--品牌团-->
+		<div class="sign">
+        	<div class="goods">
+                <div class="detail clearfix">
+                    <div class="fl aside">品牌团</div>
+                    <div class="fl type clearfix" >
+                        <a href="#" class="hot">服饰</a>
+                                    <a href="#">配饰</a>
+                        <a href="#">美妆</a>
+                        <a href="#">鞋包</a>
+                        <a href="#">食品</a>
+                        <a href="#" class="hot">家居</a>
+                        <a href="#">运动</a>
+                        <a href="#" class="hot">电器</a>
+                        <a href="#">百货</a>
+                        <a href="#">母婴</a>
+                        <a href="#">数码</a>
+                        <a href="#">更多</a>
+                    </div>
+                </div>
+            	<a href="#" class="more">
+                	<span>品牌折扣，逛起来！</span>
+                    <span class="arrow"></span>
+                </a>
+            </div>
+        </div>
+        <!--客户端-->
+        <div class="mobile">
+        	<a href="#" class="ios">
+            	<span>ios客户端</span>
+                <span class="icon"></span>
+            </a>
+        	<a href="#" class="android">
+            	<span>安卓客户端</span>
+                <span class="icon"></span>
+            </a>
+        	<a href="#" class="adv">
+            	<span>意见反馈</span>
+                <span class="icon"></span>
+            </a>
+        </div>
+        <!--登录 注册-->
+        <div class="log_reg clearfix">
+        	<div class="fl"> 
+            	<a href="#" class="login">登录</a>
+            	<a href="#" class="reg">注册</a>
+            </div>
+            <a href="#" class="fr top">
+            	<span>TOP</span>
+                <span class="trang"></span>
+            </a>
+        </div>
+        <footer>
+        	<p class="version">
+            	<a href="#">标准版</a>
+            	<a href="#">电脑版</a>
+            </p>
+            <p class="serv">@2013 浙B2-20080224 服务中心</p>
+            <img src="img/jhs/footer.png"/>
+        </footer>
+    </section>
+</body>
+</html>

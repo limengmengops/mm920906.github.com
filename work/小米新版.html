@@ -1,0 +1,1026 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/xiaomi/base.css"/>
+<style>
+	.head{min-width:1226px; height:40px; background:#333;}
+	.hd_nav{margin-top:14px;}
+	.head a{color:#b0b0b0; line-height:12px; }
+	.head a:hover{color:#fff;}
+	.hd_nav a{padding-right:9px; border-right:1px solid #424242; margin-right:8px;}
+	.hd_nav .last{border:none;}
+	.login{margin-right:7px; padding-right:7px; border:1px solid #424242; margin-top:14px;}
+	.register{margin-right:19px; margin-top:14px;}
+	.hd_r .cart{width:80px; height:40px; background:#464242 url(img/xiaomi/cart.png) no-repeat 17px 14px ; line-height:40px; padding-left:40px;}
+	/*logo nav sear*/
+	.nav_sear {height:100px;}
+	.logo a{display:block; width:55px; height:55px; text-indent:-999em; background:url(img/xiaomi/mi.png); margin-top:22px; margin-right:32px;}
+	.nav_sear .ad{margin-top:15px; }
+	nav a{margin-right:25px; font-size:16px; line-height:100px;}
+	nav a:hover{color:#ff6700;}
+	.sear{margin-top:25px;}
+	.sear .txt{width:243px; height:48px; border:1px solid #e0e0e0; position:relative;}
+	.sear .txt input{width:243px; height:48px;}
+	.sear .hot{ position:absolute; top:15px; right:5px;}
+	.sear .hot a{color:#757575; padding:0 5px; line-height:18px; background:#eee; margin-right:5px;}
+	.sear .hot a:hover{background:#ff6700; color:#fff;}
+	.sear .btn{width:50px; height:48px; border:1px solid #e0e0e0; border-left:none; background:url(img/xiaomi/sear.png) no-repeat center;}
+	/*menu banner*/
+	.menu_banner{height:460px; margin-bottom:14px;}
+	.menu{width:180px; height:439px; background:#645c50; padding-top:21px; padding-left:30px; padding-right:24px;}
+	.menu li a{line-height:42px; font-size:14px; color:#fff; margin-right:4px;}
+	.menu li .arrow{width:7px; height:12px; background:url(img/xiaomi/arrow.png); margin-top:13px;}
+	.banner{width:992px; height:460px; background:pink; overflow:hidden; position:relative;}
+	.banner a{display:block; }
+	.banner img{margin-left:-234px;}
+	.banner .btn{position:absolute; bottom:25px; right:31px;}
+	.banner .btn span{ float:left; width:6px; height:6px; border:2px solid #bab5ac; background:#968f84; margin:0 5px; border-radius:50%; cursor:pointer;}
+	.banner .btn .cur,.banner .btn span:hover{background:#fff; border-color:#9e9991;}
+	.banner  .arrow i{width:16px; height:30px; background:url(img/xiaomi/left.png); position:absolute; top:50%; margin-top:-15px; }
+	.banner  .arrow .left{left:10px;}
+	.banner  .arrow .right{right:10px; background:url(img/xiaomi/right.png);}
+	/*submenu*/
+	.submenu_ad{height:170px; margin-bottom:24px;}
+	.submenu{width:225px; height:161px; background:#5f5750; padding-top:9px; padding-left:9px; text-align:center; position:relative; }
+	.submenu a{color:#cdcac8;}
+	.submenu li{width:64px; height:70px; padding-right:6px; border-right:1px solid #665e57;margin-right:5px; margin-bottom:12px;}
+	.submenu .borrn{border-right:none; margin-right:0;}
+	.submenu li .icon{width:21px; height:25px; background:url(img/xiaomi/idcard.png); margin:11px auto;}
+	.submenu .line{position:absolute; top:84px; left:9px;}
+	.submenu .line span{float:left; width:64px; height:1px; background:#665e57; margin-right:12px; }
+	.submenu .line .last{margin-right:0;}
+	.adlist a{margin-left:14px;}
+	/*star*/
+	.star{height:400px; margin-bottom:40px;}
+	.star .hd{height:60px;}
+	.star h2{line-height:60px; font-size:20px; }
+	.carrow  span{width:34px; height:22px; border:1px solid #e0e0e0; font-weight:bold; text-align:center; line-height:22px; font-size:16px ; margin-top:26px; cursor:pointer;}
+	.carrow .right{border-left:none;}
+	.star li{width:234px; height:300px; background:#fafafa; border-top:1px solid #ffac13; text-align:center; padding-top:39px; margin-right:14px;}
+	.star .last{margin-right:0;}
+	.star li .pic{margin-bottom:24px;}
+	.star li p{line-height:23px;}
+	.star li .info{margin-bottom:10px; color:#b0b0b0;}
+	.star li .price{color:#ff6709;}
+	/*main*/
+	.main{min-width:1226px; height:4576px; background:#f5f5f5; padding-top:38px;}
+	.part,.smart{height:694px;}
+	.chd{height:80px;}
+	.chd h2{font-size:22px; line-height:60px; margin-top:20px; font-weight:normal;}
+	.chd_nav{font-size:16px; line-height:23px;  margin-top:39px; }
+	.chd_nav a{margin-left:29px; color:#424242; }
+	.chd_nav .cur,.chd_nav a:hover{color:#fd6700; border-bottom:2px solid #fd6700;}
+	.list {width:992px;}
+	.list li{width:234px; height:266px; background:#fff; margin-left:14px; text-align:center; padding-top:34px; position:relative;}
+	.list li span{width:64px; height:20px;  color:#fff;text-align:center; line-height:20px; position:absolute; top:0; left:50%; margin-left:-32px;}
+	.list li .discount{background:#e53935;}
+	.list li .new{background:#83c44e;}
+	.list li .pic{margin-bottom:14px;}
+	.list li h3,.list li .price{font-size:14px; line-height:21px; font-weight:normal;}
+	.list li .price{color:#ff6700; }
+	.list li .commend{color:#b0b0b0; line-height:39px;}
+	.list .last{background:none; padding-top:0;}
+	.list .last .sm li{width:234px; height:111px; background:#fff; padding-top:32px; margin-left:0;}
+	.list .last .sm .info{margin-left:30px; }
+	.list .last .sm .info h3{line-height:37px; }
+	.list .last .sm .info .price{color:#ff6700;}
+	.list .last .sm .pic{margin-right:20px;}
+	.list .last .sm .spec .info{padding-top:15px; }
+	.list .last .sm .more{font-size:20px; line-height:33px; }
+	/*为你推荐*/
+	.intro .list{width:1226px; height:300px;}
+	.intro .list .first{margin-left:0;}
+	.intro .list li{ transition:all 0.2s;}
+	.intro .list li:hover{transform:translateY(-2px);}
+	.intro .carrow span{margin-top:39px;}
+	/*热评产品*/
+	.hotvalue{height:495px;}
+	.bglist li{width:296px; height:415px; background:#fff; transition:all 0.2s; }
+	.hotvalue .bglist li:hover{ transform:translateY(-1px); box-shadow:1px 1px 2px 2px ;}
+	.bglist li .info{padding:28px 23px 0 33px;}
+	.bglist li .info .txt{line-height:24px;  font-size:14px; margin-bottom:9px;}
+	.bglist li .info .from{line-height:43px;}
+	.bglist li .info .name{padding-right:11px; border-right:1px solid #e0e0e0; margin-right:10px; line-height:14px;}
+	.bglist li .info .price{color:#ff6700;}
+	/*内容*/
+	.con{height:500px;}
+	.con .bglist li{width:296px; height:395px;  text-align:center; border-top:1px solid #83c44e; padding-top:24px; position:relative;}
+	.con .bglist .book{border-color:#ff6700;}
+	.con .bglist .book .type{color:#ff6700;}
+	.con .bglist .game{border-color:#e53935;}
+	.con .bglist .game .type{color:#e53935;}
+	.con .bglist .app{border-color:#2196f3;}
+	.con .bglist .app .type{color:#2196f3;}
+	.con .bglist li .type{line-height:67px; color:#83c474;}
+	.con .bglist li h4{font-size:20px; font-weight:normal; line-height:20px; margin-bottom:8px;}
+	.con .bglist li .desc{line-height:19px;height:38px;}
+	.con .bglist li .price{line-height:44px; color:#333; }
+	.con .bglist li .btn{position:absolute; bottom:25px; left:50%; margin-left:-68px;}
+	.con .bglist li .btn span{width:6px; height:6px; float:left; background:#b0b0b0; border-radius:50%; margin:0 12px; cursor:pointer; border:2px solid #fff;}
+	.con .bglist li .btn  .cur,.con .bglist li .btn span:hover{border:2px solid #ff6700; background:#fff; }
+	/*视频*/
+	.chd .more{font-size:16px; margin-right:8px; line-height:59px; margin-top:21px;}
+	.chd .icon{width:20px; height:20px; background:#b0b0b0 url(img/xiaomi/arrow2.png) no-repeat center; border-radius:50%; margin-top:41px; }
+	.videolist li{width:296px; height:285px; background:#fff; text-align:center; transition:all 0.2s linear;}
+	.videolist li:hover{ transform:translateY(-2px); box-shadow:1px 1px 5px #ccc;}
+	.videolist li .picbox{width:296px; height:180px; margin-bottom:26px; position:relative;}
+	.videolist li h3{font-weight:normal; line-height:24px; font-size:14px;}
+	.videolist li h3 a:hover{color:#ff6700;}
+	.videolist li .icon{width:32px; height:20px; border:2px solid #fff; background:#202023 url(img/xiaomi/trang.png) no-repeat center; cursor:pointer; position:absolute; left:20px; bottom:10px; border-radius:10px;}
+	.videolist li .icon:hover{background:#ff6700 url(img/xiaomi/trang.png) no-repeat center;}
+	/*service*/
+	.service {min-width:1226px; height:272px;}
+	.service a:hover{color:#ff6700;}
+	.service ul{height:79px; border-bottom:1px solid #e0e0e0;}
+	.service li{width:242px; line-height:25px; font-size:16px; margin-top:27px; border-right:1px solid #e0e0e0;}
+	.service .seven .icon{background:url(img/xiaomi/tool2.png); width:24px; height:23px; margin-top:0;}
+	.service .fif .icon{background: url(img/xiaomi/fif.png); width:24px; height:23px; margin-top:0;}
+	.service .full .icon{background: url(img/xiaomi/you.png); width:22px; height:21px; margin-top:1px;}
+	.service .last .icon{background: url(img/xiaomi/add.png); width:16px; height:21px; margin-top:1px;}
+	.service .last{border:none; }
+	.service li .icon{width:25px; height:25px; background:url(img/xiaomi/too.png); margin:-1px 6px 0 55px;}
+	/*网站地图*/
+	dl{width:160px;  margin-top:17px;}
+	dt{font-size:14px; line-height:60px;}
+	dd{line-height:28px; }
+	dd a{color:#757575;}
+	
+	.time{width:251px; height:112px; border-left:1px solid #e0e0e0; margin-top:40px; text-align:center;}
+	.tel{font-size:16px; color:#ff6700; font-weight:bold; line-height:20px;}
+	.on,.tips{line-height:18px; color:#616161; font-size:14px;}
+	.tips{margin-bottom:15px;}
+	.time .btn{width:95px; height:28px; border:1px solid #ff6700; color:#ff6700; line-height:28px; background:url(img/xiaomi/mes.png) no-repeat 8px 8px; padding-left:23px; margin-left:66px;}
+	/*footer*/
+	.footer{min-width:1226px; height:166px; background:#fafafa;}
+	.logo2 a{width:56px; height:57px; margin:30px 10px 0 1px; background:url(img/xiaomi/mi.png);}
+	.links a{margin-left:5px; margin-right:6px;}
+	.mid{margin-top:33px; line-height:18px;}
+	.partaner a{margin-left:13px; margin-top:34px;}
+	.up{height:87px; margin-bottom:30px;}
+	.bottom{width:268px; margin:0 auto;}
+</style>
+</head>
+<body >
+	<!--head-->
+	<div class="head">
+    	<div class="w">
+            <div class="fl hd_nav clearfix">
+                <a href="#" class="fl">小米网</a>
+                <a href="#" class="fl">MIUI</a>
+                <a href="#" class="fl">米聊</a>
+                <a href="#" class="fl">游戏</a>
+                <a href="#" class="fl">多看阅读</a>
+                <a href="#" class="fl">云服务</a>
+                <a href="#" class="fl">小米网移动端</a>
+                <a href="#" class="fl">问题反馈</a>
+                <a href="#" class="fl last">Select Region</a>
+            </div>
+            <div class="fr hd_r clearfix">
+            	<a href="#" class="fl login">登录</a>
+            	<a href="#" class="fl register">注册</a>
+            	<a href="#" class="fl cart">购物车(0)</a>
+            </div>
+        </div>
+    </div>
+    <!--logo nav sear-->
+    <div class="w nav_sear clearfix">
+    	<h1 class="logo fl"><a href="#">小米</a></h1>
+        <a href="#" class="fl ad"><img src="img/xiaomi/doodle0507.gif"/></a>
+        <nav class="fl clearfix">
+        	<a href="#" class="fl">小米手机</a>
+        	<a href="#" class="fl">红米</a>
+        	<a href="#" class="fl">平板</a>
+        	<a href="#" class="fl">电视</a>
+        	<a href="#" class="fl">盒子.影音</a>
+        	<a href="#" class="fl">路由器</a>
+        	<a href="#" class="fl">智能硬件</a>
+        	<a href="#" class="fl">服务</a>
+        	<a href="#" class="fl">社区</a>
+        </nav>
+        <div class="fr sear clearfix">
+        	<div class="fl txt">
+            	<input type="text" />
+                <div class="hot clearfix">
+                	<a href="#" class="fl">小米手机4c</a>
+                    <a href="#" class="fl">平衡车</a>
+                </div>
+            </div>
+            <a href="#" class="btn fl"></a>
+        </div>
+    </div>
+    <!--menu banner-->
+    <div class="w menu_banner clearfix">
+    	<ul class="menu fl">
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        	<li class="clearfix">
+            	<div class="clearfix fl">
+            		<a href="#" class="fl">手机</a>
+            		<a href="#" class="fl">平板</a>
+            		<a href="#" class="fl">电话卡</a>
+                </div>
+                <i class="fr arrow"></i>
+            </li>
+        </ul>
+    	<div class="banner fl">
+        	<a href="#"><img src="img/xiaomi/1226460 (1).jpg"/></a>
+            <div class="clearfix btn">
+            	<span ></span>
+            	<span></span>
+            	<span></span>
+            	<span class="cur"></span>
+            	<span></span>
+            </div>
+            <div class="arrow">
+            	<i class="left"></i>
+                <i class="right"></i>
+            </div>
+        </div>
+    </div>
+    <!--submenu-->
+    <div class="w submenu_ad clearfix">
+    	<div class="submenu fl">
+        	<ul class="clearfix"s>
+                <li class="fl">
+                    <i class="icon block"></i>
+                    <p><a href="#">电信专场</a></p>
+                </li>
+                <li class="fl">
+                    <i class="icon block"></i>
+                    <p><a href="#">电信专场</a></p>
+                </li>
+                <li class="fl borrn">
+                    <i class="icon block"></i>
+                    <p><a href="#">电信专场</a></p>
+                </li>
+                <li class="fl ">
+                    <i class="icon block"></i>
+                    <p><a href="#">电信专场</a></p>
+                </li>
+                <li class="fl">
+                    <i class="icon block"></i>
+                    <p><a href="#">电信专场</a></p>
+                </li>
+                <li class="fl borrn">
+                    <i class="icon block"></i>
+                    <p><a href="#">电信专场</a></p>
+                </li>
+            </ul>
+            <div class="line clearfix">
+            	<span></span>
+                <span></span>
+                <span class="last"></span>
+            </div>
+        </div>
+    	<div class="adlist fl clearfix">
+        	<a href="#" class="fl"><img src="img/xiaomi/316170.jpg"/></a>
+        	<a href="#" class="fl"><img src="img/xiaomi/316170.jpg"/></a>
+        	<a href="#" class="fl"><img src="img/xiaomi/316170.jpg"/></a>
+        </div>
+    </div>
+    <!--小米明星单品-->
+	<div class="w star">
+    	<div class="hd clearfix">
+        	<h2 class="fl"> <a href="#">小米明星单品</a></h2>
+            <div class="fr carrow clearfix">
+            	<span class="fl">&lt;</span>
+            	<span class="fl right">&gt;</span>
+            </div>
+        </div>
+        <ul class="clearfix">
+        	<li class="fl">
+            	<a href="#" class="block pic"><img src="img/xiaomi/160160.jpg"/></a>
+                <h3><a href="#">小米盒子3</a></h3>
+                <p class="info">真4K解锁输出，内容提升80%</p>
+                <p class="price">299元</p>
+             </li>
+        	<li class="fl">
+            	<a href="#" class="block pic"><img src="img/xiaomi/160160.jpg"/></a>
+                <h3><a href="#">小米盒子3</a></h3>
+                <p class="info">真4K解锁输出，内容提升80%</p>
+                <p class="price">299元</p>
+             </li>
+        	<li class="fl">
+            	<a href="#" class="block pic"><img src="img/xiaomi/160160.jpg"/></a>
+                <h3><a href="#">小米盒子3</a></h3>
+                <p class="info">真4K解锁输出，内容提升80%</p>
+                <p class="price">299元</p>
+             </li>
+        	<li class="fl">
+            	<a href="#" class="block pic"><img src="img/xiaomi/160160.jpg"/></a>
+                <h3><a href="#">小米盒子3</a></h3>
+                <p class="info">真4K解锁输出，内容提升80%</p>
+                <p class="price">299元</p>
+             </li>
+        	<li class="fl last">
+            	<a href="#" class="block pic"><img src="img/xiaomi/160160.jpg"/></a>
+                <h3><a href="#">小米盒子3</a></h3>
+                <p class="info">真4K解锁输出，内容提升80%</p>
+                <p class="price">299元</p>
+             </li>
+        </ul>
+    </div>
+    <!--main-->
+    <div class="main">
+    	<!--智能硬件-->
+    	<div class=" w smart">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">智能硬件</a></h2>
+                <div class="fr viewmore ">
+                	<a href="#" class="fl more">查看全部</a>
+                    <a href="#" class="fl icon"></a>
+                </div>
+            </div>
+            <div class="clearfix">
+            	<div class="fl aside">
+                	<a href="#" class="block"><img src="img/xiaomi/234614.jpg"/></a>
+                </div>
+                <ul class="fl list clearfix">
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="discount">享7折</span>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="discount">享7折</span>
+                    </li>
+                    <li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    	<!--搭配-->
+    	<div class=" w part">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">搭配</a></h2>
+                <div class="chd_nav fr clearfix">
+                	<a href="#" class="fl cur">热门</a>
+                	<a href="#" class="fl">耳机音箱</a>
+                	<a href="#" class="fl">电源</a>
+                	<a href="#" class="fl">电磁存储卡</a>
+                </div>
+            </div>
+            <div class="clearfix">
+            	<div class="fl aside">
+                	<a href="#" class="block marb_14"><img src="img/xiaomi/234300 (2).jpg"/></a>
+                	<a href="#" class="block"><img src="img/xiaomi/234300 (1).jpg"/></a>
+                </div>
+                <ul class="fl list clearfix">
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="discount">享7折</span>
+                    </li>
+                    <li class="last fl">
+                    	<ul class="sm">
+                        	<li class="marb_14 clearfix">
+                                <div class="info fl">
+                                    <h3><a href="#">小米圆铁耳机</a></h3>
+                                    <p class="price">99元</p>
+                                </div>
+                                <a href="#" class=" fr pic"><img src="img/xiaomi/8080.jpg"/></a>
+                            </li>
+                            <li class="spec clearfix">
+                                <div class="info fl">
+                                   <p class="more"><a href="#">浏览更多</a></p>
+                                    <p class="hot"><a href="#">热门</a></p>
+                                </div>
+                                <a href="#" class="fr pic"><img src="img/xiaomi/moreicon.png"/></a>
+                            </li>
+                        </ul>
+                    	
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--配件-->
+    	<div class=" w part">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">配件</a></h2>
+                <div class="chd_nav fr clearfix">
+                	<a href="#" class="fl cur">热门</a>
+                	<a href="#" class="fl ">保护套</a>
+                	<a href="#" class="fl">贴膜</a>
+                	<a href="#" class="fl">后盖</a>
+                	<a href="#" class="fl">其它配件</a>
+                </div>
+            </div>
+            <div class="clearfix">
+            	<div class="fl aside">
+                	<a href="#" class="block marb_14"><img src="img/xiaomi/234300 (6).jpg"/></a>
+                	<a href="#" class="block"><img src="img/xiaomi/234300 (3).jpg"/></a>
+                </div>
+                <ul class="fl list clearfix">
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span>享7折</span>
+                    </li>
+                    <li class="last fl">
+                    	<ul class="sm">
+                        	<li class="marb_14 clearfix">
+                                <div class="info fl">
+                                    <h3><a href="#">小米圆铁耳机</a></h3>
+                                    <p class="price">99元</p>
+                                </div>
+                                <a href="#" class=" fr pic"><img src="img/xiaomi/80802.jpg"/></a>
+                            </li>
+                            <li class="spec clearfix">
+                                <div class="info fl">
+                                   <p class="more"><a href="#">浏览更多</a></p>
+                                    <p class="hot"><a href="#">热门</a></p>
+                                </div>
+                                <a href="#" class="fr pic"><img src="img/xiaomi/moreicon.png"/></a>
+                            </li>
+                        </ul>
+                    	
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--周边-->
+    	<div class=" w part">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">周边</a></h2>
+                <div class="chd_nav fr clearfix">
+                	<a href="#" class="fl cur">热门</a>
+                	<a href="#" class="fl">服装</a>
+                	<a href="#" class="fl">米兔</a>
+                	<a href="#" class="fl">生活周边</a>
+                	<a href="#" class="fl">箱包</a>
+                </div>
+            </div>
+            <div class="clearfix">
+            	<div class="fl aside">
+                	<a href="#" class="block marb_14"><img src="img/xiaomi/234300 (4).jpg"/></a>
+                	<a href="#" class="block"><img src="img/xiaomi/234300 (5).jpg"/></a>
+                </div>
+                <ul class="fl list clearfix">
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                	<li class="fl marb_14">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                    </li>
+                	<li class="fl">
+                    	<a href="#" class="block pic"><img src="img/xiaomi/150150.jpg"/></a>
+                        <h3><a href="#">小米移动电源10000mAh</a></h3>
+                        <p class="price">29元</p>
+                        <p class="commend">16.7万人评价</p>
+                        <span class="new">新品</span>
+                    </li>
+                    <li class="last fl">
+                    	<ul class="sm">
+                        	<li class="marb_14 clearfix">
+                                <div class="info fl">
+                                    <h3><a href="#">小米圆铁耳机</a></h3>
+                                    <p class="price">99元</p>
+                                </div>
+                                <a href="#" class=" fr pic"><img src="img/xiaomi/8080.jpg"/></a>
+                            </li>
+                            <li class="spec clearfix">
+                                <div class="info fl">
+                                   <p class="more"><a href="#">浏览更多</a></p>
+                                    <p class="hot"><a href="#">热门</a></p>
+                                </div>
+                                <a href="#" class="fr pic"><img src="img/xiaomi/moreicon.png"/></a>
+                            </li>
+                        </ul>
+                    	
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--为你推荐-->
+        <div class=" w intro">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">为你推荐</a></h2>
+                <div class="fr carrow clearfix">
+                    <span class="fl">&lt;</span>
+                    <span class="fl right">&gt;</span>
+                </div>
+            </div>
+            <ul class="list clearfix">
+                <li class="fl first">
+                    <a href="#" class="block pic"><img src="img/xiaomi/140140 (1).jpg"/></a>
+                    <h3><a href="#">小米移动电源10000mAh</a></h3>
+                    <p class="price">29元</p>
+                    <p class="commend">16.7万人评价</p>
+                </li>
+                <li class="fl">
+                    <a href="#" class="block pic"><img src="img/xiaomi/140140 (2).jpg"/></a>
+                    <h3><a href="#">小米移动电源10000mAh</a></h3>
+                    <p class="price">29元</p>
+                    <p class="commend">16.7万人评价</p>
+                </li>
+                <li class="fl">
+                    <a href="#" class="block pic"><img src="img/xiaomi/140140 (5).jpg"/></a>
+                    <h3><a href="#">小米移动电源10000mAh</a></h3>
+                    <p class="price">29元</p>
+                    <p class="commend">16.7万人评价</p>
+                </li>
+                <li class="fl">
+                    <a href="#" class="block pic"><img src="img/xiaomi/140140 (3).jpg"/></a>
+                    <h3><a href="#">小米移动电源10000mAh</a></h3>
+                    <p class="price">29元</p>
+                    <p class="commend">16.7万人评价</p>
+                </li>
+                <li class="fl">
+                    <a href="#" class="block pic"><img src="img/xiaomi/140140 (4).jpg"/></a>
+                    <h3><a href="#">小米移动电源10000mAh</a></h3>
+                    <p class="price">29元</p>
+                    <p class="commend">16.7万人评价</p>
+                </li>
+            </ul>
+        </div>
+        <!--热评产品-->
+        <div class="w hotvalue">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">热评产品</a></h2>
+            </div>
+            <ul class="bglist clearfix">
+                <li class="fl marr_14">
+                	<a href="#" class="block"><img src="img/xiaomi/296220 (2).jpg"/></a>
+                    <div class="info">
+                    	 <p class="txt"><a href="#">自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种！</a></p>
+                         <p class="from"> 来自于Tauru 1992的评价</p>
+                         <p class="clearfix">
+                         	<a href="#" class="fl name">小米自拍杆</a>
+                            <span class="fl price">49元</span>
+                         </p>
+                    </div>
+                   
+                </li>
+                <li class="fl marr_14">
+                	<a href="#" class="block"><img src="img/xiaomi/296220 (4).jpg"/></a>
+                    <div class="info">
+                    	 <p class="txt"><a href="#">自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种！</a></p>
+                         <p class="from"> 来自于Tauru 1992的评价</p>
+                         <p class="clearfix">
+                         	<a href="#" class="fl name">小米自拍杆</a>
+                            <span class="fl price">49元</span>
+                         </p>
+                    </div>
+                   
+                </li>
+                <li class="fl marr_14">
+                	<a href="#" class="block"><img src="img/xiaomi/296220 (3).jpg"/></a>
+                    <div class="info">
+                    	 <p class="txt"><a href="#">自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种！</a></p>
+                         <p class="from"> 来自于Tauru 1992的评价</p>
+                         <p class="clearfix">
+                         	<a href="#" class="fl name">小米自拍杆</a>
+                            <span class="fl price">49元</span>
+                         </p>
+                    </div>
+                   
+                </li>
+                <li class="fl">
+                	<a href="#" class="block"><img src="img/xiaomi/296220 (1).jpg"/></a>
+                    <div class="info">
+                    	 <p class="txt"><a href="#">自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种病！拍起来要人命！自拍是种！</a></p>
+                         <p class="from"> 来自于Tauru 1992的评价</p>
+                         <p class="clearfix">
+                         	<a href="#" class="fl name">小米自拍杆</a>
+                            <span class="fl price">49元</span>
+                         </p>
+                    </div>
+                   
+                </li>
+            </ul>
+        </div>
+        <!--内容-->
+        <div class="w con">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">内容</a></h2>
+            </div>
+            <ul class="bglist clearfix">
+            	<li class="book fl marr_14">
+                    <div class="info">
+                    	<p class="type">图书</p>
+                    	<h4><a href="#">致年轻的你</a></h4>
+                        <p class="desc">简单、干净、小清新、送给年轻的你</p>
+                        <p class="price">免费</p>
+                		<a href="#" class="block"><img src="img/xiaomi/216154 (2).png"/></a>
+                    </div>
+                    <div class="btn">
+                    	<span class="cur"></span>
+                    	<span></span>
+                    	<span></span>
+                    	<span></span>
+                    </div>
+                </li>
+                <li class="fl marr_14">
+                    <div class="info">
+                    	<p class="type">MIUI主题</p>
+                    	<h4><a href="#">致年轻的你</a></h4>
+                        <p class="desc">简单、干净、小清新、送给年轻的你</p>
+                        <p class="price">免费</p>
+                		<a href="#" class="block"><img src="img/xiaomi/216154 (1).jpg"/></a>
+                    </div>
+                    <div class="btn">
+                    	<span class="cur"></span>
+                    	<span></span>
+                    	<span></span>
+                    	<span></span>
+                    </div>
+                </li>
+                <li class="game fl marr_14">
+                    <div class="info">
+                    	<p class="type">游戏</p>
+                    	<h4><a href="#">致年轻的你</a></h4>
+                        <p class="desc">简单、干净、小清新、送给年轻的你</p>
+                        <p class="price">免费</p>
+                		<a href="#" class="block"><img src="img/xiaomi/216154 (1).png"/></a>
+                    </div>
+                    <div class="btn">
+                    	<span class="cur"></span>
+                    	<span></span>
+                    	<span></span>
+                    	<span></span>
+                    </div>
+                </li>
+                <li class="app fl">
+                    <div class="info">
+                    	<p class="type">应用</p>
+                    	<h4><a href="#">致年轻的你</a></h4>
+                        <p class="desc">简单、干净、小清新、送给年轻的你</p>
+                        <p class="price">免费</p>
+                		<a href="#" class="block"><img src="img/xiaomi/216154 (3).png"/></a>
+                    </div>
+                    <div class="btn">
+                    	<span class="cur"></span>
+                    	<span></span>
+                    	<span></span>
+                    	<span></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--视频-->
+        <div class="w video">
+        	<div class="chd clearfix">
+            	<h2 class="fl"><a href="#">视频</a></h2>
+                <div class="fr viewmore ">
+                	<a href="#" class="fl more">查看全部</a>
+                    <a href="#" class="fl icon"></a>
+                </div>
+            </div>
+            <ul class="videolist clearfix">
+            	<li class="fl marr_14">
+                	<div class="picbox">
+                		<a href="#" class="block pic"><img src="img/xiaomi/296180 (1).jpg"/></a>
+                        <span class="icon"></span>
+                    </div>
+                    <h3><a href="#">笑喷了，沈腾爆笑出演，6集连播</a></h3>
+                    <p>小米MAX沈腾爆笑预告全集</p>
+                </li>
+            	<li class="fl marr_14">
+                	<div class="picbox">
+                		<a href="#" class="block pic"><img src="img/xiaomi/296180 (2).jpg"/></a>
+                        <span class="icon"></span>
+                    </div>
+                    <h3><a href="#">笑喷了，沈腾爆笑出演，6集连播</a></h3>
+                    <p>小米MAX沈腾爆笑预告全集</p>
+                </li>
+                <li class="fl marr_14">
+                	<div class="picbox">
+                		<a href="#" class="block pic"><img src="img/xiaomi/296180 (3).jpg"/></a>
+                        <span class="icon"></span>
+                    </div>
+                    <h3><a href="#">笑喷了，沈腾爆笑出演，6集连播</a></h3>
+                    <p>小米MAX沈腾爆笑预告全集</p>
+                </li>
+            	<li class="fl">
+                	<div class="picbox">
+                		<a href="#" class="block pic"><img src="img/xiaomi/296180 (4).jpg"/></a>
+                        <span class="icon"></span>
+                    </div>
+                    <h3><a href="#">笑喷了，沈腾爆笑出演，6集连播</a></h3>
+                    <p>小米MAX沈腾爆笑预告全集</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--service-->
+    <div class="service">
+    	<div class="w">
+        	<ul class="w clearfix">
+        	<li class="fl clearfix">
+            	<i class="icon fl"></i>
+                <a href="#" class="fl txt">1小时快修服务</a>
+            </li>
+            <li class="seven fl clearfix">
+            	<i class="icon fl"></i>
+                <a href="#" class="fl txt">7天免费换货</a>
+            </li>
+            <li class="fif fl clearfix">
+            	<i class="icon fl"></i>
+                <a href="#" class="fl txt">15天免费换货</a>
+            </li>
+            <li class="full fl clearfix">
+            	<i class="icon fl"></i>
+                <a href="#" class="fl txt">满150包邮</a>
+            </li>
+            <li class="last fl clearfix">
+            	<i class="icon fl"></i>
+                <a href="#" class="fl txt">520余家售后网点</a>
+            </li>
+        </ul>
+        	<div class="map clearfix">
+            	<div class="fl clearfix">
+                    <dl class="fl">
+                        <dt><a href="#">帮助中心</a></dt>
+                        <dd><a href="#">购物指南</a></dd>
+                        <dd><a href="#">支付方式</a></dd>
+                        <dd><a href="#">配送方式</a></dd>
+                    </dl>
+                    <dl class="fl">
+                        <dt><a href="#">帮助中心</a></dt>
+                        <dd><a href="#">购物指南</a></dd>
+                        <dd><a href="#">支付方式</a></dd>
+                        <dd><a href="#">配送方式</a></dd>
+                    </dl>
+                    <dl class="fl">
+                        <dt><a href="#">帮助中心</a></dt>
+                        <dd><a href="#">购物指南</a></dd>
+                        <dd><a href="#">支付方式</a></dd>
+                        <dd><a href="#">配送方式</a></dd>
+                    </dl>
+                    <dl class="fl">
+                        <dt><a href="#">帮助中心</a></dt>
+                        <dd><a href="#">购物指南</a></dd>
+                        <dd><a href="#">支付方式</a></dd>
+                        <dd><a href="#">配送方式</a></dd>
+                    </dl>
+                    <dl class="fl">
+                        <dt><a href="#">帮助中心</a></dt>
+                        <dd><a href="#">购物指南</a></dd>
+                        <dd><a href="#">支付方式</a></dd>
+                        <dd><a href="#">配送方式</a></dd>
+                    </dl>
+                    <dl class="fl">
+                        <dt><a href="#">帮助中心</a></dt>
+                        <dd><a href="#">购物指南</a></dd>
+                        <dd><a href="#">支付方式</a></dd>
+                        <dd><a href="#">配送方式</a></dd>
+                    </dl>
+                </div>
+                <div class="fr time">
+                	<p class="tel">400-100-5678</p>
+                    <p class="on">周一至周日8：00-18：00</p>
+                    <p class="tips">(仅收市话费)</p>
+                    <a href="#" class="block btn">
+                    	24小时在线客服
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="footer">
+    	<div class="w">
+        	<div class="up clearfix">
+                <h1 class="logo2 fl"><a href="#" class="block"></a></h1>
+                <div class="mid fl">
+                    <p class="links"><a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a>|<a href="#">小米网</a></p>
+                    <p>©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号 </p>
+                    <p>违法和不良信息举报电话：185-0130-1238, 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+                </div>
+                <div class="partaner clearfix">
+                    <a href="#" class="fl"><img src="img/xiaomi/8528 (1).png"/></a>
+                    <a href="#" class="fl"><img src="img/xiaomi/8528 (2).png"/></a>
+                    <a href="#" class="fl"><img src="img/xiaomi/8528 (3).png"/></a>
+                    <a href="#" class="fl"><img src="img/xiaomi/8528 (1).png"/></a>
+                </div>
+            </div>
+    		<p class="bottom"><img src="img/xiaomi/未标题-3.png"/></p>
+        </div>
+    </div>
+</body>
+</html>
